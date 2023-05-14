@@ -77,7 +77,6 @@ export const Movie = () => {
         });
 
         setNames(names);
-        setRatingAll(values)
         let sum = values.reduce(function(a,b){
             return a + b;
         })
