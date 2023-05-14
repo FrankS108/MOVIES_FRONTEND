@@ -55,7 +55,7 @@ export const Movie = () => {
 
         //Carlo
         await axios.get(`${import.meta.env.VITE_BACKEND_URL_CARLO}/movies/${id}`).then((response) => {
-            let value = response.data.rating;
+            let value = scaleValue(response.data.rating, [0, 10], [0, 5]);
             values.push(value);
         }).catch(function(error){
             console.log(error);
