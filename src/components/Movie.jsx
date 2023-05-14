@@ -11,6 +11,7 @@ export const Movie = () => {
     const [movie, setMovie] = useState({});
 
     //Compañeros
+    const [names, setNames] = useState([]);
     const [rate, setRate] = useState(0);
     const [average, setAverage] = useState(0);
 
@@ -38,7 +39,6 @@ export const Movie = () => {
         //Jorge
         await axios.get( `${import.meta.env.VITE_BACKEND_URL_JORGE}/api/movies/rating/${id}`).then((response) => {
             let value = Number(response.data.finalRating);
-            names.push("Jorge");
             values.push(value);
         }).catch(function(error){
             console.log(error);
@@ -47,7 +47,6 @@ export const Movie = () => {
         //Carlos
         await axios.get(`${import.meta.env.VITE_BACKEND_URL_CARLOS}/${id}`).then((response) => {
             let value = response.data.local_rating;
-            names.push("Carlos");
             values.push(value);
         }).catch(function(error){
             console.log(error);
@@ -56,7 +55,6 @@ export const Movie = () => {
         //Carlo
         await axios.get(`${import.meta.env.VITE_BACKEND_URL_CARLO}/movies/${id}`).then((response) => {
             let value = response.data.rating;
-            names.push("Carlo");
             values.push(value);
         }).catch(function(error){
             console.log(error);
@@ -65,7 +63,6 @@ export const Movie = () => {
         //Cesar
         await axios.get( `${import.meta.env.VITE_BACKEND_URL_CESAR}/api/films/${id}`).then((response) => {
             let value = scaleValue(response.data.ratingAverage.$numberDecimal, [1, 10], [0, 5]);
-            names.push("Cesar");
             values.push(value);
         }).catch(function(error){
             console.log(error);
@@ -74,7 +71,6 @@ export const Movie = () => {
         //Edgar
         await axios.get( `${import.meta.env.VITE_BACKEND_URL_EDGAR}/reviews/movie/${id}`).then((response) => {
             let value = response.data.avgScore;
-            names.push("Edgar");
             values.push(value);
         }).catch(function(error){
             console.log(error);
@@ -86,7 +82,7 @@ export const Movie = () => {
             return a + b;
         })
         let averageAll = sum / values.length;
-        console.log(averageAll);
+        console.log(averageAll)
         setAverage(averageAll);
     }
 
