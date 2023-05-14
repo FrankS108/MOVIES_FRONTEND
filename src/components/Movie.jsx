@@ -11,17 +11,11 @@ export const Movie = () => {
     const [movie, setMovie] = useState({});
 
     //Compañeros
-    const [ratingAll, setRatingAll] = useState([]);
-    const [names, setNames] = useState([]);
     const [rate, setRate] = useState(0);
     const [average, setAverage] = useState(0);
 
     const params = useParams();
     const id = params.id;
-    const urls = [
-        `${import.meta.env.VITE_BACKEND_URL_CESAR}/api/movies/rating/${id}`,
-        `${import.meta.env.VITE_BACKEND_URL_EDGAR}/reviews/${id}`//Angel
-    ];
 
     const handleMovie = async() => {
         const id = params.id;
@@ -38,7 +32,6 @@ export const Movie = () => {
     }
 
     /* Obtener ratings de compañeros */
-
     const handleRatingAll = async() => {
         let values = []
         let names = []
@@ -93,19 +86,8 @@ export const Movie = () => {
             return a + b;
         })
         let averageAll = sum / values.length;
+        console.log(averageAll);
         setAverage(averageAll);
-    }
-    const handleRatingJorge = async(url) => {
-        await axios.get(url).then((response) => {
-            let value = response.data.rates;
-            setRatingAll([...ratingAll, value]);
-        })
-    }
-    
-    const handleRatingCesar = async(url) => {
-        await axios.get(url).then((response) => {
-            
-        })
     }
 
     function scaleValue(value, from, to) {
