@@ -30,6 +30,7 @@ export const Movie = () => {
         const id = params.id;
         await axios.post(`${import.meta.env.VITE_BACKEND_URL_LOCAL}/api/movies/${id}`, {rate});
         setRate(0);
+        handleMovie();
     }
 
     /* Obtener ratings de compañeros */
