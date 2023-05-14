@@ -1,0 +1,143 @@
+:root {
+  /*--fuentePrincipal: 'Poppins', sans-serif;*/
+  /*--fuentePrincipal: 'Outfit', sans-serif;*/
+  /*--fuentePrincipal: 'Roboto', sans-serif;*/
+  --fuentePrincipal: 'Montserrat', sans-serif;
+  --black: black;
+  --white: white;
+}
+html {
+font-size: 62.5%;
+box-sizing: border-box;
+}
+*, *:before, *:after {
+box-sizing: inherit;
+}
+body {
+font-family: var(--fuentePrincipal);
+font-size: 1.6rem;
+line-height: 1.8;
+background-size: cover;
+background-repeat: no-repeat;
+background-color: #242424;
+
+}
+h1, h2, h3 {
+font-weight: 900;
+margin: 2rem 0;
+}
+h1 {
+font-size: 5rem;
+}
+h2 {
+font-size: 4.6rem;
+}
+h3 {
+font-size: 3rem;
+}
+
+.contenedor {  
+max-width: 120rem;
+margin: 0 auto;
+width: 90%;
+}
+
+.title{
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
+.movie__block{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.movie__card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__card img{
+  width: max-content;
+  align-self: center;
+}
+
+@media (min-width: 1280px) {
+  .movie__card{
+      display: flex;
+      flex-direction: row;
+      min-width: 100%;
+  }
+}
+
+.card__information{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  color: var(--white);
+  min-width: 60%;
+  max-width: 60%;
+}
+
+.movie__title{
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+
+.movie__detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.movie__detail > *{
+  margin: 0;
+}
+
+.movie__rate{
+  margin: 0.5rem;
+  font-size: 3rem;
+}
+
+.movie__description{
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.movie__link{
+  text-transform: uppercase;
+  color: #ffda00;
+  text-decoration: none;
+  border: 0.2rem solid #ffda00;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  transition: all 0.5s;
+  background-color: var(--black);
+  text-align: center;
+}
+
+@media (min-width: 1280px) {
+  .movie__link{
+      max-width: 20%;
+  }
+}
+
+.movie__link:hover{
+  background-color: #ffda00;
+  color: var(--black);
+}
+
